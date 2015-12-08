@@ -90,38 +90,39 @@ namespace Owin
 
         public static void ConfigureIdentityProviders(IAppBuilder app, string signInAsType)
         {
+            //https://console.developers.google.com/apis/enabled?project=lobbyidp
             var google = new GoogleOAuth2AuthenticationOptions
             {
                 AuthenticationType = "Google",
                 Caption = "Google",
                 SignInAsAuthenticationType = signInAsType,
 
-                ClientId = "767400843187-8boio83mb57ruogr9af9ut09fkg56b27.apps.googleusercontent.com",
-                ClientSecret = "5fWcBT0udKY7_b6E3gEiJlze"
+                ClientId = "647535480811-65ge1pjvv8f808h5iodirpr8c5do7mep.apps.googleusercontent.com",
+                ClientSecret = "7c5_Fg51TvH0-gHMJyNL5qwk"
             };
             app.UseGoogleAuthentication(google);
 
-            var fb = new FacebookAuthenticationOptions
-            {
-                AuthenticationType = "Facebook",
-                Caption = "Facebook",
-                SignInAsAuthenticationType = signInAsType,
+            //var fb = new FacebookAuthenticationOptions
+            //{
+            //    AuthenticationType = "Facebook",
+            //    Caption = "Facebook",
+            //    SignInAsAuthenticationType = signInAsType,
 
-                AppId = "676607329068058",
-                AppSecret = "9d6ab75f921942e61fb43a9b1fc25c63"
-            };
-            app.UseFacebookAuthentication(fb);
+            //    AppId = "676607329068058",
+            //    AppSecret = "9d6ab75f921942e61fb43a9b1fc25c63"
+            //};
+            //app.UseFacebookAuthentication(fb);
 
-            var twitter = new TwitterAuthenticationOptions
-            {
-                AuthenticationType = "Twitter",
-                Caption = "Twitter",
-                SignInAsAuthenticationType = signInAsType,
+            //var twitter = new TwitterAuthenticationOptions
+            //{
+            //    AuthenticationType = "Twitter",
+            //    Caption = "Twitter",
+            //    SignInAsAuthenticationType = signInAsType,
 
-                ConsumerKey = "N8r8w7PIepwtZZwtH066kMlmq",
-                ConsumerSecret = "df15L2x6kNI50E4PYcHS0ImBQlcGIt6huET8gQN41VFpUCwNjM"
-            };
-            app.UseTwitterAuthentication(twitter);
+            //    ConsumerKey = "N8r8w7PIepwtZZwtH066kMlmq",
+            //    ConsumerSecret = "df15L2x6kNI50E4PYcHS0ImBQlcGIt6huET8gQN41VFpUCwNjM"
+            //};
+            //app.UseTwitterAuthentication(twitter);
 
             var aad = new OpenIdConnectAuthenticationOptions
             {
@@ -129,36 +130,49 @@ namespace Owin
                 Caption = "Azure AD",
                 SignInAsAuthenticationType = signInAsType,
 
-                Authority = "https://login.windows.net/4ca9cb4c-5e5f-4be9-b700-c532992a3705",
-                ClientId = "65bbbda8-8b85-4c9d-81e9-1502330aacba",
-                RedirectUri = "https://localhost:44333/core/aadcb"
+                Authority = "https://lobbyidp.azurewebsites.net/login",
+                ClientId = "d632263f-1956-470c-b3fb-2400ac2a39e8",
+                RedirectUri = "https://lobbyidp.azurewebsites.net:44333/core/aadcb"
             };
 
             app.UseOpenIdConnectAuthentication(aad);
 
-            var adfs = new WsFederationAuthenticationOptions
-            {
-                AuthenticationType = "adfs",
-                Caption = "ADFS",
-                SignInAsAuthenticationType = signInAsType,
-                CallbackPath = new PathString("/core/adfs"),
+            //var adfs = new WsFederationAuthenticationOptions
+            //{
+            //    AuthenticationType = "adfs",
+            //    Caption = "ADFS",
+            //    SignInAsAuthenticationType = signInAsType,
+            //    CallbackPath = new PathString("/core/adfs"),
 
-                MetadataAddress = "https://adfs.leastprivilege.vm/federationmetadata/2007-06/federationmetadata.xml",
-                Wtrealm = "urn:idsrv3"
-            };
-            app.UseWsFederationAuthentication(adfs);
+            //    MetadataAddress = "https://adfs.leastprivilege.vm/federationmetadata/2007-06/federationmetadata.xml",
+            //    Wtrealm = "urn:idsrv3"
+            //};
+            //app.UseWsFederationAuthentication(adfs);
 
-            var was = new WsFederationAuthenticationOptions
-            {
-                AuthenticationType = "was",
-                Caption = "Windows",
-                SignInAsAuthenticationType = signInAsType,
-                CallbackPath = new PathString("/core/was"),
+            //var was = new WsFederationAuthenticationOptions
+            //{
+            //    AuthenticationType = "was",
+            //    Caption = "Windows",
+            //    SignInAsAuthenticationType = signInAsType,
+            //    CallbackPath = new PathString("/core/was"),
 
-                MetadataAddress = "https://localhost:44350",
-                Wtrealm = "urn:idsrv3"
-            };
-            app.UseWsFederationAuthentication(was);
+            //    MetadataAddress = "https://lobbyidp.azurewebsites.net:44350",
+            //    Wtrealm = "urn:idsrv3"
+            //};
+            //app.UseWsFederationAuthentication(was);
+
+            //var lobby = new GoogleOAuth2AuthenticationOptions
+            //{
+            //    AuthenticationType = "LobbyIDP",
+            //    Caption = "Lobby IdP",
+            //    SignInAsAuthenticationType = signInAsType,
+
+            //    ClientId = "xxw32324234.apps.googleusercontent.com",
+            //    ClientSecret = "sdefgsdfg_asdfasdf"
+            //};
+            //app.UseGoogleAuthentication(lobby);
+
+
         }
     }
 }

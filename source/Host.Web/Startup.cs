@@ -29,6 +29,8 @@ namespace Host.Web
                 .CreateLogger();
 
             app.UseIdentityServer();
+
+
         }
     }
 }
