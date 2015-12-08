@@ -49,6 +49,7 @@ namespace IdentityServer3.Host.Config
                     {
                         // MVC code client manual
                         "https://lobbyidp.azurewebsites.net:44312/callback",
+                        "https://localhost:44312/callback",
                     },
 
                     AllowedScopes = new List<string>
@@ -99,21 +100,34 @@ namespace IdentityServer3.Host.Config
                     {
                         // JS client with popup login dialog
                         "http://lobbyidp.azurewebsites.net:37045/index.html",
+                        "http://localhost:37045/index.html",
                         "http://lobbyidp.azurewebsites.net:37046/index.html",
+                        "http://localhost:37046/index.html",
                         "http://lobbyidp.azurewebsites.net:37047/index.html",
+                        "http://localhost:37047/index.html",
                         "http://lobbyidp.azurewebsites.net:37047/callback.html",
+                        "http://localhost:37047/callback.html",
                         "http://lobbyidp.azurewebsites.net:37047/modal.html",
+                        "http://localhost:37047/modal.html",
                         "http://lobbyidp.azurewebsites.net:37047/popup.html",
+                        "http://localhost:37047/popup.html",
                         "http://lobbyidp.azurewebsites.net:37047/frame.html",
+                        "http://localhost:37047/frame.html",
 
                         // "simple JS client"
                         "https://lobbyidp.azurewebsites.net:44331/Home/Callback",
+                        "https://localhost:44331/Home/Callback",
 
                         // OAuthJS client
                         "http://lobbyidp.azurewebsites.net:23453/callback.html",
                         "http://lobbyidp.azurewebsites.net:23453/frame.html",
                         "http://lobbyidp.azurewebsites.net:23453/modal.html",
                         "http://lobbyidp.azurewebsites.net:23453/popup.html",
+
+                        "http://localhost:23453/callback.html",
+                        "http://localhost:23453/frame.html",
+                        "http://localhost:23453/modal.html",
+                        "http://localhost:23453/popup.html",
 
                         // WPF client
                         "oob://lobbyidp.azurewebsites.net/wpfclient",
@@ -125,29 +139,46 @@ namespace IdentityServer3.Host.Config
                         "http://lobbyidp.azurewebsites.net:21575/index.html",
                         "http://lobbyidp.azurewebsites.net:21575/silent_renew.html",
 
+                        "http://localhost:21575/index.html",
+                        "http://localhost:21575/silent_renew.html",
+
                         // MVC form post sample
                         "http://lobbyidp.azurewebsites.net:11716/account/signInCallback",
+                        "http://localhost:11716/account/signInCallback",
+
 
                         // OWIN middleware client
                         "http://lobbyidp.azurewebsites.net:2671/",
-                        "https://lobbyidp.azurewebsites.net:44301/"
+                        "http://localhost:2671/",
+                        "https://lobbyidp.azurewebsites.net:44301/",
+                        "https://localhost:44301/"
                     },
 
                     PostLogoutRedirectUris = new List<string>
                     {
                         "http://lobbyidp.azurewebsites.net:23453/index.html",
+                        "http://localhost:23453/index.html",
                         "http://lobbyidp.azurewebsites.net:21575/index.html",
+                        "http://localhost:21575/index.html",
                         "http://lobbyidp.azurewebsites.net:37045/index.html",
+                        "http://localhost:37045/index.html",
                         "http://lobbyidp.azurewebsites.net:37046/index.html",
-                        "http://lobbyidp.azurewebsites.net:37047/index.html"
+                        "http://localhost:37046/index.html",
+                        "http://lobbyidp.azurewebsites.net:37047/index.html",
+                        "http://localhost:37047/index.html"
                     },
 
                     AllowedCorsOrigins = new List<string>{
                         "http://lobbyidp.azurewebsites.net:21575",
+                        "http://localhost:21575",
                         "http://lobbyidp.azurewebsites.net:37045",
+                        "http://localhost:37045",
                         "http://lobbyidp.azurewebsites.net:37046",
+                        "http://localhost:37046",
                         "http://lobbyidp.azurewebsites.net:37047",
-                        "http://lobbyidp.azurewebsites.net:23453"
+                        "http://localhost:37047",
+                        "http://lobbyidp.azurewebsites.net:23453",
+                        "http://localhost:23453"
                     },
 
                     LogoutUri = "https://lobbyidp.azurewebsites.net:44301/Home/SignoutCleanup",
@@ -223,13 +254,17 @@ namespace IdentityServer3.Host.Config
                     RedirectUris = new List<string>
                     {
                         "http://lobbyidp.azurewebsites.net:2672/",
-                        "https://lobbyidp.azurewebsites.net:44300/"
+                        "http://localhost:2672/",
+                        "https://lobbyidp.azurewebsites.net:44300/",
+                        "https://localhost:44300/"
                     },
 
                     PostLogoutRedirectUris = new List<string>
                     {
                         "http://lobbyidp.azurewebsites.net:2672/",
-                        "https://lobbyidp.azurewebsites.net:44300/"
+                        "http://localhost:2672/",
+                        "https://lobbyidp.azurewebsites.net:44300/",
+                        "https://localhost:44300/"
                     },
 
                     LogoutUri = "https://lobbyidp.azurewebsites.net:44300/Home/OidcSignOut",
