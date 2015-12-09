@@ -221,7 +221,8 @@ namespace IdentityServer3.Host.Config
                     
                     RedirectUris = new List<string>
                     {
-                        "oob://lobbyidp.azurewebsites.net/wpfclient"
+                        "oob://lobbyidp.azurewebsites.net/wpfclient",
+                        "oob://localhost/wpfclient"
                     }
                 },
 
